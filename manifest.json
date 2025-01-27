@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Scroll To Top",
+  "version": "1.0",
+  "description": "A Chrome extension to scroll to the top of the page by double pressing 'b'.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icons/icon48.png"
+  }
+}

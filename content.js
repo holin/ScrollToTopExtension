@@ -9,5 +9,12 @@ document.addEventListener("keydown", (event) => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     lastKeyPressTime = currentTime;
+  } else if (event.key === "d") {
+    const currentTime = new Date().getTime();
+    if (currentTime - lastKeyPressTime < doublePressThreshold) {
+      // 双击 d 键
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+    lastKeyPressTime = currentTime;
   }
 });
